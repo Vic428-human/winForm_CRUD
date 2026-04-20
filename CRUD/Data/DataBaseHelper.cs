@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Microsoft.Data.Sqlite;
+using Microsoft.Data.Sqlite; // 這個專案實際上連的是 SQLite，而且資料庫檔案位置是 :　C:\Users\你的Windows使用者\AppData\Local\CS Software\SalesDB.db
 
 namespace CRUD.Data
 {
