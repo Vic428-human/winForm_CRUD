@@ -41,9 +41,6 @@
             txtID = new TextBox();
             label1 = new Label();
             dgvCustomerDetails = new DataGridView();
-            colId = new DataGridViewTextBoxColumn();
-            colName = new DataGridViewTextBoxColumn();
-            colEmail = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCustomerDetails).BeginInit();
             SuspendLayout();
@@ -181,28 +178,12 @@
             // dgvCustomerDetails
             // 
             dgvCustomerDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomerDetails.Columns.AddRange(new DataGridViewColumn[] { colId, colName, colEmail });
             dgvCustomerDetails.Location = new Point(471, 12);
             dgvCustomerDetails.Name = "dgvCustomerDetails";
             dgvCustomerDetails.Size = new Size(326, 368);
             dgvCustomerDetails.TabIndex = 1;
             dgvCustomerDetails.CellClick += dgvCustomerDetails_CellClick;
             dgvCustomerDetails.CellContentClick += dgvCustomerDetails_CellContentClick;
-            // 
-            // colId
-            // 
-            colId.HeaderText = "Id";
-            colId.Name = "colId";
-            // 
-            // colName
-            // 
-            colName.HeaderText = "Name";
-            colName.Name = "colName";
-            // 
-            // colEmail
-            // 
-            colEmail.HeaderText = "Email";
-            colEmail.Name = "colEmail";
             // 
             // Form1
             // 
@@ -234,8 +215,5 @@
         private Button btnInsert;
         private Button btnClear;
         private DataGridView dgvCustomerDetails;
-        private DataGridViewTextBoxColumn colId;
-        private DataGridViewTextBoxColumn colName;
-        private DataGridViewTextBoxColumn colEmail;
     }
 }

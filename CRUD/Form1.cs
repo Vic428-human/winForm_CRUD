@@ -26,11 +26,30 @@ namespace CRUD
                         using (var reader = cmd.ExecuteReader())
                         {
                             var table = new DataTable();
-                            table.Load(reader);
+                            table.Columns.Add("Id");
+                            table.Columns.Add("Name");
+                            table.Columns.Add("Email");
 
-                            dgvCustomerDetails.AutoGenerateColumns = true;
+                            while (reader.Read())
+                            {
+                                table.Rows.Add(
+                                    reader["Id"]?.ToString(),
+                                    reader["Name"]?.ToString(),
+                                    reader["Email"]?.ToString()
+                                );
+                            }
+
+                            MessageBox.Show("Rows loaded: " + table.Rows.Count);
+
                             dgvCustomerDetails.DataSource = null;
+                            dgvCustomerDetails.Columns.Clear();
+                            dgvCustomerDetails.AutoGenerateColumns = true;
                             dgvCustomerDetails.DataSource = table;
+
+                            MessageBox.Show(
+                                $"Grid Columns: {dgvCustomerDetails.Columns.Count}\nGrid Rows: {dgvCustomerDetails.Rows.Count}",
+                                "Grid Debug"
+                            );
                         }
                     }
                 }
