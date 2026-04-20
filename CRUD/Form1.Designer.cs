@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            txtID = new TextBox();
-            txtName = new TextBox();
-            label2 = new Label();
+            btnDelete = new Button();
+            btnUpdate = new Button();
+            btnRead = new Button();
+            btnInsert = new Button();
+            btnClear = new Button();
             txtEmail = new TextBox();
             label3 = new Label();
-            btnClear = new Button();
-            btnInsert = new Button();
-            btnRead = new Button();
-            btnUpdate = new Button();
-            btnDelete = new Button();
+            txtName = new TextBox();
+            label2 = new Label();
+            txtID = new TextBox();
+            label1 = new Label();
             dgvCustomerDetails = new DataGridView();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCustomerDetails).BeginInit();
@@ -64,38 +64,63 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // label1
+            // btnDelete
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(18, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(76, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Customer ID";
+            btnDelete.BackColor = Color.Red;
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(342, 139);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 23);
+            btnDelete.TabIndex = 11;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
             // 
-            // txtID
+            // btnUpdate
             // 
-            txtID.Location = new Point(115, 30);
-            txtID.Name = "txtID";
-            txtID.ReadOnly = true;
-            txtID.Size = new Size(100, 23);
-            txtID.TabIndex = 2;
+            btnUpdate.BackColor = Color.FromArgb(192, 64, 0);
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(261, 139);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(75, 23);
+            btnUpdate.TabIndex = 10;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // txtName
+            // btnRead
             // 
-            txtName.Location = new Point(115, 62);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(181, 23);
-            txtName.TabIndex = 4;
+            btnRead.BackColor = Color.FromArgb(192, 0, 192);
+            btnRead.ForeColor = Color.White;
+            btnRead.Location = new Point(180, 139);
+            btnRead.Name = "btnRead";
+            btnRead.Size = new Size(75, 23);
+            btnRead.TabIndex = 9;
+            btnRead.Text = "Read";
+            btnRead.UseVisualStyleBackColor = false;
+            btnRead.Click += btnRead_Click;
             // 
-            // label2
+            // btnInsert
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(18, 65);
-            label2.Name = "label2";
-            label2.Size = new Size(42, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Name";
+            btnInsert.BackColor = Color.FromArgb(0, 64, 0);
+            btnInsert.ForeColor = Color.White;
+            btnInsert.Location = new Point(99, 139);
+            btnInsert.Name = "btnInsert";
+            btnInsert.Size = new Size(75, 23);
+            btnInsert.TabIndex = 8;
+            btnInsert.Text = "Insert";
+            btnInsert.UseVisualStyleBackColor = false;
+            btnInsert.Click += btnInsert_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Navy;
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(18, 139);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 23);
+            btnClear.TabIndex = 7;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // txtEmail
             // 
@@ -114,60 +139,39 @@
             label3.Text = "Email";
             label3.Click += label3_Click;
             // 
-            // btnClear
+            // txtName
             // 
-            btnClear.BackColor = Color.Navy;
-            btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(18, 139);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(75, 23);
-            btnClear.TabIndex = 7;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = false;
+            txtName.Location = new Point(115, 62);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(181, 23);
+            txtName.TabIndex = 4;
+            txtName.TextChanged += txtName_TextChanged;
             // 
-            // btnInsert
+            // label2
             // 
-            btnInsert.BackColor = Color.FromArgb(0, 64, 0);
-            btnInsert.ForeColor = Color.White;
-            btnInsert.Location = new Point(99, 139);
-            btnInsert.Name = "btnInsert";
-            btnInsert.Size = new Size(75, 23);
-            btnInsert.TabIndex = 8;
-            btnInsert.Text = "Insert";
-            btnInsert.UseVisualStyleBackColor = false;
+            label2.AutoSize = true;
+            label2.Location = new Point(18, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(42, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Name";
             // 
-            // btnRead
+            // txtID
             // 
-            btnRead.BackColor = Color.FromArgb(192, 0, 192);
-            btnRead.ForeColor = Color.White;
-            btnRead.Location = new Point(180, 139);
-            btnRead.Name = "btnRead";
-            btnRead.Size = new Size(75, 23);
-            btnRead.TabIndex = 9;
-            btnRead.Text = "Read";
-            btnRead.UseVisualStyleBackColor = false;
+            txtID.Location = new Point(115, 30);
+            txtID.Name = "txtID";
+            txtID.ReadOnly = true;
+            txtID.Size = new Size(100, 23);
+            txtID.TabIndex = 2;
             // 
-            // btnUpdate
+            // label1
             // 
-            btnUpdate.BackColor = Color.FromArgb(192, 64, 0);
-            btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(261, 139);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(75, 23);
-            btnUpdate.TabIndex = 10;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = Color.Red;
-            btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(342, 139);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
-            btnDelete.TabIndex = 11;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
+            label1.AutoSize = true;
+            label1.Location = new Point(18, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(76, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Customer ID";
             // 
             // dgvCustomerDetails
             // 
@@ -176,6 +180,7 @@
             dgvCustomerDetails.Name = "dgvCustomerDetails";
             dgvCustomerDetails.Size = new Size(326, 368);
             dgvCustomerDetails.TabIndex = 1;
+            dgvCustomerDetails.CellContentClick += dgvCustomerDetails_CellContentClick;
             // 
             // Form1
             // 

@@ -50,10 +50,10 @@ namespace CRUD.Data
         /// 取得資料庫連線 - 類似 React 中建立一個「資料庫實例」
         /// 每次要操作資料庫時都要呼叫這個方法
         /// </summary>
-        public static SQLiteConnection GetConnection()
+        public static SqliteConnection GetConnection()
         {
             // 返回一個新的連線物件（類似 new AxiosInstance 或 new PrismaClient）
-            return new SQLiteConnection(ConnectionString);
+            return new SqliteConnection(ConnectionString);
         }
     }
 }
